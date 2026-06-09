@@ -119,6 +119,19 @@ app.post("/api/pedido/em-rota", async (req,res)=>{
 
 });
 
+app.get("/", (req, res) => {
+  res.json({
+    status: "online",
+    sistema: "Backend SalgadosCosta"
+  });
+});
+
+app.get("/health", (req, res) => {
+  res.json({
+    status: "ok"
+  });
+});
+
 app.listen(process.env.PORT, ()=>{
 
   console.log("Servidor iniciado");
