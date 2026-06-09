@@ -119,6 +119,33 @@ app.post("/api/pedido/em-rota", async (req,res)=>{
 
 });
 
+app.get("/teste-whatsapp", async (req, res) => {
+
+  try {
+
+    const resultado = await enviarMensagem(
+      "21993876478",
+      "🚀 Teste Backend SalgadosCosta + Evolution"
+    );
+
+    res.json(resultado.data);
+
+  } catch (erro) {
+
+    console.error(
+      erro.response?.data || erro.message
+    );
+
+    res.status(500).json(
+      erro.response?.data || {
+        erro: erro.message
+      }
+    );
+
+  }
+
+});
+
 app.get("/", (req, res) => {
   res.json({
     status: "online",
