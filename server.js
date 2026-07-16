@@ -41,7 +41,7 @@ app.post("/api/pedido/producao", async (req,res)=>{
 
     await enviarMensagem(
       telefone,
-      `🍔 Olá ${nome}!\n\nSeu pedido ${pedidoId} entrou em produção.`
+      `🍔 Ol\u00E1 ${nome}!\n\nSeu pedido ${pedidoId} entrou em produ\u00E7\u00E3o.`
     );
 
     res.json({
@@ -72,7 +72,7 @@ app.post("/api/pedido/pronto", async (req,res)=>{
 
     await enviarMensagem(
       telefone,
-      `✅ Olá ${nome}!\n\nSeu pedido ${pedidoId} está pronto para retirada.`
+      `Obaaa! ${nome}, seu pedido ${pedidoId} j\u00E1 est\u00E1 pronto para retirada \uD83C\uDF89`
     );
 
     res.json({
@@ -102,7 +102,7 @@ app.post("/api/pedido/em-rota", async (req,res)=>{
 
     await enviarMensagem(
       telefone,
-      `🚚 Olá ${nome}!\n\nSeu pedido está a caminho!\n\n${rastreioLink}`
+      `${nome}, seu pedido j\u00E1 est\u00E1 a caminho da sua casa com muito amor e cuidado \uD83D\uDE97\uD83D\uDC95`
     );
 
     res.json({
